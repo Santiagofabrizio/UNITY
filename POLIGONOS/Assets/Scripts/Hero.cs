@@ -59,12 +59,13 @@ public class Hero : MonoBehaviour {
 		if (coll.gameObject.tag == "Enemy") {
 
 			Enemy e = coll.gameObject.GetComponent<Enemy>();
+			e.Despertarse();/*
 			if (e.getDormido()) {
 				e.Dormirse();
 				//rigidbody2D.MovePosition(new Vector2(rigidbody2D.position.x, 5));
 			} else {
 				e.Despertarse();
-			}
+			}*/
 		}
 	}
 }
