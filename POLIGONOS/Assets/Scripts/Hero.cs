@@ -5,7 +5,7 @@ public class Hero : MonoBehaviour {
 
 	// Use this for initialization
 
-	public float maxSpeed = 0f;
+	public float maxSpeed = 10f;
 	public float jumpForce = 2000f;
 	public float angle = 30f;
 	public float angleVar = 30f;
@@ -45,9 +45,16 @@ public class Hero : MonoBehaviour {
 
 		//rigidbody2D.velocity = new Vector2 (maxSpeed * horizontal, rigidbody2D.velocity.y);
 
+
+		if (rigidbody2D.velocity.y > 0) {
+			rigidbody2D.velocity= new Vector2(horizontal * maxSpeed, rigidbody2D.velocity.y);
+		}	
+
 		if (jump) { 
 				//rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, jumpForce);
 				rigidbody2D.AddForce (new Vector2 (rigidbody2D.velocity.x, jumpForce));
+				
+
 		}
 		else {
 				rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, rigidbody2D.velocity.y);
